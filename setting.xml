@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<smrtpipeSettings>
+  <global>
+    <param name="reference">
+        <value>/mnt/secondary-siv/references/ecoli_contig</value>
+    </param>
+  </global>
+  <module name="P_Fetch"/>
+  <module name="P_Filter">
+    <param name="minLength">
+        <value>50</value>
+    </param>
+    <param name="minSubReadLength">
+        <value>50</value>
+    </param>
+    <param name="readScore">
+        <value>0.75</value>
+    </param>
+  </module>
+  <module name="P_FilterReports"/>
+  <module name="P_AHA">
+    <param name="fillin">
+        <value>False</value>
+    </param>
+    <param name="blasrOpts">
+        <value>-minMatch 10 -minPctIdentity 70 -bestn 10 -noSplitSubreads</value>
+    </param>
+    <param name="instrumentModel">
+        <value>RS</value>
+    </param>
+    <param name="paramSchedule">
+        <value>6,3,75,100;6,3,75,100;5,3,75,100;6,2,75,100;6,2,75,100;5,2,75,100</value>
+    </param>
+    <param name="maxIterations">
+        <value>6</value>
+    </param>
+    <param name="description">
+        <value>AHA ("A Hybrid Assembler") is the PacBio hybrid assembly algorithm. It is based on the open source assembly software package AMOS, with additional software components tailored to PacBio's long reads and error profile.</value>
+    </param>
+  </module>
+</smrtpipeSettings>
